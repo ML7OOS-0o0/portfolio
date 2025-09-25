@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-body { margin:0; font-family:'Roboto', sans-serif; height:100vh; background:url('https://frutigeraeroarchive.org/images/introduction/asadal.jpg') no-repeat center center fixed; background-size:cover; overflow:hidden; color:#fff; }
+body { margin:0; font-family:'Roboto', sans-serif; height:100vh; background:url('https://frutigeraeroarchive.org/images/introduction/asadal.jpg') no-repeat center center fixed; background-size:cover; overflow:hidden; }
 
 /* XP LOGIN */
 #xp-login {position:fixed; top:0; left:0; width:100%; height:100%; background:#0078d7; display:flex; flex-direction:column; justify-content:center; align-items:center; color:#fff; z-index:1000; opacity:1; transition:opacity 1s ease;}
@@ -146,8 +146,8 @@ body { margin:0; font-family:'Roboto', sans-serif; height:100vh; background:url(
     margin-top: 14px;
 }
 .social-links a {
-    text-decoration: none;
     color: #00ffff;
+    text-decoration: none;
     background: rgba(255,255,255,0.06);
     padding: 6px 10px; /* Reduced padding */
     border-radius: 10px;
@@ -161,233 +161,13 @@ body { margin:0; font-family:'Roboto', sans-serif; height:100vh; background:url(
     width: 18px; /* Reduced icon size */
     height: 18px;
 }
-
-/* New styles for the chat window */
-.chat-window {
-    position:fixed;
-    bottom:20px;
-    left:20px;
-    width:350px;
-    height:450px;
-    background: #eef; /* Lighter, more solid background */
-    border-radius: 12px;
-    border: 1px solid #77a;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    overflow:hidden;
-    display:none; /* Start hidden */
-    flex-direction:column;
-    z-index: 3;
-    opacity: 0;
-    transition: opacity 1s ease;
-    cursor: grab;
-}
-.chat-title-bar {
-    background: linear-gradient(to bottom, #d6eaff, #a9c6ff); /* Classic MSN blue gradient */
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10px;
-    color: #000;
-    font-weight: bold;
-    font-size: 14px;
-    border-bottom: 1px solid #77a;
-    cursor: grab;
-}
-.chat-title-bar-buttons {
-    display: flex;
-    gap: 4px;
-}
-.chat-title-bar-button {
-    width: 12px;
-    height: 12px;
-    border-radius: 2px;
-    background: #fff;
-    border: 1px solid #77a;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
-    cursor: pointer;
-}
-.chat-body {
-    flex: 1;
-    padding: 15px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.message {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 8px;
-    border-radius: 8px;
-    background: #f8f8f8;
-    color: #000;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-.message-pfp {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-.message-content {
-    display: flex;
-    flex-direction: column;
-    color: #000;
-    font-size: 14px;
-}
-.message-username {
-    font-weight: bold;
-    color: #0066cc; /* MSN-style blue for usernames */
-}
-.message-text {
-    margin-top: 2px;
-}
-.message-timestamp {
-    font-size: 10px;
-    color: #999;
-    margin-top: 4px;
-}
-.chat-input {
-    display: flex;
-    padding: 10px;
-    border-top: 1px solid #ccc;
-    background: #f0f0f0;
-}
-.chat-input input {
-    flex: 1;
-    background: #fff;
-    border: 1px solid #bbb;
-    border-radius: 4px;
-    padding: 8px;
-    color: #000;
-    outline: none;
-    font-size: 14px;
-}
-.chat-input input::placeholder {
-    color: #aaa;
-}
-.chat-input button {
-    background: #0078d7;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 12px;
-    margin-left: 8px;
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-/* Login form for chat */
-.chat-login-form {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 4;
-    padding: 20px;
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(15px);
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.3);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    display: none; /* Start hidden */
-    flex-direction: column;
-    gap: 15px;
-    color: #fff;
-}
-.chat-login-form h3 {
-    text-align: center;
-    margin: 0;
-    font-size: 18px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-.chat-login-form input {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 8px;
-    padding: 10px;
-    color: #fff;
-    outline: none;
-}
-.chat-login-form input::placeholder {
-    color: rgba(255,255,255,0.6);
-}
-.chat-login-form button {
-    background: #00bfff;
-    border: none;
-    border-radius: 8px;
-    padding: 10px;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-}
-.avatar-selection {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-.avatar-selection img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: border-color 0.3s ease;
-}
-.avatar-selection img.selected {
-    border-color: #00bfff;
-}
-.chat-user-info {
-  font-size: 10px;
-  color: #fff;
-  opacity: 0.7;
-  text-align: center;
-  margin-top: 5px;
-  word-break: break-all;
-}
-.chat-launcher {
-  position:fixed;
-  bottom: 20px;
-  left: 20px;
-  z-index: 10;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  font-size: 12px;
-  color: #fff;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-  padding: 10px;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(8px);
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.2);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease;
-}
-.chat-launcher:hover {
-  transform: translateY(-5px);
-}
-.chat-launcher-icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 5px;
-}
 </style>
 </head>
 <body>
 
 <div id="xp-login">
   <h1>Welcome :D</h1>
-  <button id="loginBtn">Click to Login</button>
+  <button onclick="login()">Click to Login</button>
 </div>
 
 <div class="aero-window" id="mainWindow">
@@ -418,7 +198,7 @@ body { margin:0; font-family:'Roboto', sans-serif; height:100vh; background:url(
     <div class="social-links" style="margin-top:0;">
       <a href="https://www.instagram.com/rsx3p/" target="_blank"><img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" /> Instagram</a>
       <a href="https://steamcommunity.com/id/RSX3P/" target="_blank"><img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/3670/3670382.png" /> Steam</a>
-      <a href="#" id="discordLink"><img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" /> Discord</a>
+      <a href="#" onclick="showAlert('Discord: adrianeofg')"><img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" /> Discord</a>
       <a href="https://discord.gg/4yFxGamW6d" target="_blank"><img class="social-icon" src="https://cdn.discordapp.com/icons/1393681698180567160/10918040296887c31d50d1f9dadd4aa3.png" /> SaudiFourms</a>
     </div>
   </div>
@@ -438,44 +218,6 @@ body { margin:0; font-family:'Roboto', sans-serif; height:100vh; background:url(
   </div>
 </div>
 
-<!-- MSN Style Chat Window -->
-<div class="chat-window" id="chatWindow">
-    <div class="chat-title-bar" id="chatDragBar">
-        MSN Messenger
-        <div class="chat-title-bar-buttons">
-            <div class="chat-title-bar-button" onclick="closeChatWindow()"></div>
-        </div>
-    </div>
-    <div class="chat-user-info" id="chatUserInfo"></div>
-    <div class="chat-body" id="chatBody">
-        <!-- Messages will be loaded here -->
-    </div>
-    <div class="chat-input">
-        <input type="text" id="chatInput" placeholder="Type a message...">
-        <button id="sendBtn">Send</button>
-    </div>
-</div>
-
-<!-- Chat Launcher Icon -->
-<div class="chat-launcher" id="chatLauncher">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPRarYX74B5jIB2iW73lpGYTSYT5VSpU32OA&s" alt="MSN Messenger" class="chat-launcher-icon">
-  MSN Messenger
-</div>
-
-<!-- Chat Login Form -->
-<div class="chat-login-form" id="chatLoginForm">
-    <h3>Sign in to chat</h3>
-    <input type="text" id="usernameInput" placeholder="Enter your username">
-    <h4>Select a PFP:</h4>
-    <div class="avatar-selection" id="avatarSelection">
-        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" data-url="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" class="selected">
-        <img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" data-url="https://cdn-icons-png.flaticon.com/512/3670/3670157.png">
-        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" data-url="https://cdn-icons-png.flaticon.com/512/149/149071.png">
-        <img src="https://cdn-icons-png.flaticon.com/512/10332/10332304.png" data-url="https://cdn-icons-png.flaticon.com/512/10332/10332304.png">
-    </div>
-    <button id="chatLoginBtn">Login to Chat</button>
-</div>
-
 <!-- Custom Modal UI -->
 <div id="customModal" class="custom-modal">
     <div class="modal-title" id="modalTitle"></div>
@@ -486,283 +228,114 @@ body { margin:0; font-family:'Roboto', sans-serif; height:100vh; background:url(
     </div>
 </div>
 
-<!-- Firebase SDKs -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-  import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-  import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-  import { signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js"; // Added import
-
-  // Firestore Debug Logging (Keeping this commented for production)
-  // setLogLevel('debug');
-
-  let app, db, auth;
-  let userId;
-  let username = 'Anonymous';
-  let userPfp = 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png'; // Default PFP
-
-  // --- HTML Elements & Global Variables ---
-  const xpLogin = document.getElementById('xp-login');
-  const loginBtn = document.getElementById('loginBtn');
-  const mainWindow = document.getElementById('mainWindow');
-  const musicPlayer = document.getElementById('musicPlayer');
-  const chatWindow = document.getElementById('chatWindow');
-  const chatLauncher = document.getElementById('chatLauncher');
-  const chatDragBar = document.getElementById('chatDragBar');
-  const dragBar = document.getElementById('dragBar');
-
-  const chatLoginForm = document.getElementById('chatLoginForm');
-  const chatLoginBtn = document.getElementById('chatLoginBtn');
-  const usernameInput = document.getElementById('usernameInput');
-  const avatarSelection = document.getElementById('avatarSelection');
-  const chatBody = document.getElementById('chatBody');
-  const chatInput = document.getElementById('chatInput');
-  const sendBtn = document.getElementById('sendBtn');
-  const chatUserInfo = document.getElementById('chatUserInfo');
-  const discordLink = document.getElementById('discordLink');
+<script>
+// LOGIN TRANSITION
+function login(){
+  const loginScreen=document.getElementById('xp-login');
+  const mainWin=document.getElementById('mainWindow');
+  const musicPlayer=document.getElementById('musicPlayer');
   
-  const customModal = document.getElementById('customModal');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalBody = document.getElementById('modalBody');
-  const modalOkBtn = document.getElementById('modalOkBtn');
-  const modalCancelBtn = document.getElementById('modalCancelBtn');
-
-  // --- AUDIO SETUP ---
-  // FIX: Updated audio URL with the user-provided link.
-  const audio = new Audio('https://github.com/ML7OOS-0o0/portfolio/raw/refs/heads/main/Nostalgia%20%20Chill%20Aqua.mp3');
-  const playPauseBtn = document.getElementById('playPauseBtn');
-  const progressBar = document.getElementById('progressBar');
-  const progressBarContainer = document.querySelector('.progress-bar-container');
-  const volumeSlider = document.getElementById('volumeSlider');
-  audio.volume = volumeSlider.value;
-  audio.loop = true;
-
-
-  // --- LOGIN TRANSITION & INITIAL SETUP ---
-  loginBtn.addEventListener('click', login);
+  // Fade out the login screen first
+  loginScreen.style.opacity = '0';
   
-  function login() {
-    xpLogin.style.opacity = '0';
-    setTimeout(() => {
-        xpLogin.style.display = 'none';
-        mainWindow.style.opacity = '1';
-        musicPlayer.style.opacity = '1';
-        chatLauncher.style.opacity = '1';
-        
-        chatLoginForm.style.display = 'flex';
-        chatWindow.style.opacity = '1';
-        chatWindow.style.display = 'flex';
+  // After a delay (to match the transition duration), fade in the main content
+  setTimeout(() => {
+    loginScreen.style.display = 'none'; // Hide the login screen after fading
+    mainWin.style.opacity = '1';
+    musicPlayer.style.opacity = '1';
 
-        audio.play().catch(e => {
-            console.error("Audio playback failed:", e);
-        });
-        
-        playPauseBtn.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play().catch(e => {
-                    console.error("Play failed:", e);
-                    showAlert("Audio playback failed. The browser may have blocked it. Please try again.");
-                });
-            } else {
-                audio.pause();
-            }
-        });
-
-        audio.onplay = () => playPauseBtn.textContent = '⏸';
-        audio.onpause = () => playPauseBtn.textContent = '▶';
-        audio.onended = () => playPauseBtn.textContent = '▶';
-
-        progressBarContainer.addEventListener('click', (e) => {
-            const clickX = e.offsetX;
-            const width = progressBarContainer.clientWidth;
-            const newTime = (clickX / width) * audio.duration;
-            if (!isNaN(newTime)) {
-                audio.currentTime = newTime;
-            }
-        });
-
-        volumeSlider.addEventListener('input', () => {
-            audio.volume = volumeSlider.value;
-        });
-
-        setInterval(() => {
-            if (!audio.paused && !isNaN(audio.duration)) {
-                const progress = (audio.currentTime / audio.duration) * 100;
-                progressBar.style.width = `${progress}%`;
-            }
-        }, 250);
-
-    }, 1000);
-  }
-
-  // --- CHAT LOGIC ---
-
-  try {
-    const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
-    if (firebaseConfig.projectId) {
-      app = initializeApp(firebaseConfig);
-      db = getFirestore(app);
-      auth = getAuth(app);
-      
-      const initAuth = async () => {
-        try {
-          if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-            await signInWithCustomToken(auth, __initial_auth_token);
-          } else {
-            await signInAnonymously(auth);
-          }
-          userId = auth.currentUser ? auth.currentUser.uid : crypto.randomUUID();
-          setupChatListener();
-        } catch (e) {
-          console.error("Firebase Auth Error:", e);
-          showAlert("Failed to authenticate. Chat features may be limited.");
-        }
-      };
-      initAuth();
-
-    } else {
-      console.error("Firebase config is missing or invalid.");
-    }
-  } catch(e) {
-    console.error("Failed to parse Firebase config:", e);
-  }
-
-  avatarSelection.addEventListener('click', (e) => {
-      document.querySelectorAll('.avatar-selection img').forEach(img => {
-          img.classList.remove('selected');
-      });
-      if (e.target.tagName === 'IMG') {
-          e.target.classList.add('selected');
-          userPfp = e.target.dataset.url;
-      }
-  });
-
-  discordLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    showAlert('Discord: adrianeofg');
-  });
-
-  chatLoginBtn.addEventListener('click', async () => {
-      const enteredUsername = usernameInput.value.trim();
-      const selectedPfp = document.querySelector('.avatar-selection img.selected');
-      
-      if (!selectedPfp) {
-        return showAlert("Please select an avatar.");
-      }
-      userPfp = selectedPfp.dataset.url;
-
-      if (enteredUsername) {
-          username = enteredUsername;
-          chatLoginForm.style.display = 'none';
-          chatUserInfo.innerHTML = `Signed in as: ${username}<br>User ID: ${userId.substring(0, 8)}...`;
-      } else {
-          showAlert("Please enter a username.");
-      }
-  });
-
-  sendBtn.addEventListener('click', sendMessage);
-  chatInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-          sendMessage();
-      }
-  });
-  
-  chatLauncher.addEventListener('click', () => {
-    chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
-  });
-  
-  window.closeChatWindow = function() {
-    chatWindow.style.display = 'none';
-  }
-
-  async function sendMessage() {
-      const text = chatInput.value.trim();
-      if (text) {
-          if (!auth || !auth.currentUser) {
-            return showAlert("Please log in to the chat first.");
-          }
-          try {
-              const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-              const chatCollectionRef = collection(db, `artifacts/${appId}/public/data/chat_messages`);
-              
-              await addDoc(chatCollectionRef, {
-                  username: username,
-                  pfp: userPfp,
-                  text: text,
-                  timestamp: serverTimestamp(),
-                  userId: userId
-              });
-              chatInput.value = '';
-          } catch (e) {
-              console.error("Error adding document: ", e);
-              showAlert("Failed to send message. Please check the console for errors.");
-          }
-      }
-  }
-
-  function setupChatListener() {
-    const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-    const chatCollectionRef = collection(db, `artifacts/${appId}/public/data/chat_messages`);
-    const q = query(chatCollectionRef, orderBy('timestamp'));
-
-    onSnapshot(q, (snapshot) => {
-        chatBody.innerHTML = '';
-        snapshot.docs.forEach(doc => {
-            const data = doc.data();
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('message');
-            
-            const timestamp = data.timestamp ? new Date(data.timestamp.seconds * 1000).toLocaleTimeString() : '';
-
-            const isCurrentUser = data.userId === userId;
-            if (isCurrentUser) {
-              messageElement.style.backgroundColor = '#ccf';
-              messageElement.style.color = '#000';
-              messageElement.style.marginLeft = 'auto'; 
-            } else {
-              messageElement.style.backgroundColor = '#f8f8f8';
-              messageElement.style.color = '#000';
-              messageElement.style.marginLeft = '0'; 
-            }
-
-            messageElement.innerHTML = `
-                <img src="${data.pfp}" alt="PFP" class="message-pfp">
-                <div class="message-content">
-                    <span class="message-username">${data.username}</span>
-                    <span class="message-text">${data.text}</span>
-                    <span class="message-timestamp">${timestamp}</span>
-                </div>
-            `;
-            chatBody.appendChild(messageElement);
-        });
-        chatBody.scrollTop = chatBody.scrollHeight;
-    }, (error) => {
-        console.error("Error listening to chat messages:", error);
-        showAlert("Failed to load chat messages. Please check the console.");
+    // Initialize audio and event listeners after user interaction
+    const audio = new Audio('https://s3.eu-central-1.wasabisys.com/audio.com.audio/transcoding/17/98/1844162374589817-1844162374744247-1844162377315643.mp3?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=W7IA3NSYSOQIKLY9DEVC%2F20250924%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20250924T161142Z&X-Amz-SignedHeaders=host&X-Amz-Expires=518400&X-Amz-Signature=6b9431eb119c2500b0c3c19c2d9c57359878059b524870e957f1d846714512f6');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const progressBar = document.getElementById('progressBar');
+    const progressBarContainer = document.querySelector('.progress-bar-container');
+    const volumeSlider = document.getElementById('volumeSlider');
+    audio.volume = volumeSlider.value;
+    audio.play().catch(e => {
+      console.error("Audio playback failed:", e);
+      // Optional: Show a message to the user that they can click the play button
     });
-  }
-
-  function showAlert(message) {
-      modalTitle.textContent = "Notice";
-      modalBody.textContent = message;
-      modalCancelBtn.style.display = 'none';
-      modalOkBtn.onclick = () => { customModal.style.display = 'none'; };
-      customModal.style.display = 'flex';
-  };
-
-  function dragElement(elmnt, handle){
-    let pos1=0,pos2=0,pos3=0,pos4=0;
-    if (handle) {
-      handle.onmousedown=dragMouseDown;
-    }
-    function dragMouseDown(e){ e.preventDefault(); pos3=e.clientX; pos4=e.clientY; document.onmouseup=closeDragElement; document.onmousemove=elementDrag; }
-    function elementDrag(e){ e.preventDefault(); pos1=pos3-e.clientX; pos2=pos4-e.clientY; pos3=e.clientX; pos4=e.clientY; elmnt.style.top=(elmnt.offsetTop-pos2)+'px'; elmnt.style.left=(elmnt.offsetLeft-pos1)+'px'; }
-    function closeDragElement(){ document.onmouseup=null; document.onmousemove=null; }
-  }
   
-  dragElement(mainWindow, dragBar);
-  dragElement(chatWindow, chatDragBar);
-  dragElement(chatLauncher, chatLauncher);
+    // Audio player event listeners
+    playPauseBtn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play().catch(e => {
+          console.error("Play failed:", e);
+          showAlert("Audio playback failed. The browser may have blocked it. Please try again.");
+        });
+      } else {
+        audio.pause();
+      }
+    });
+  
+    audio.onplay = () => playPauseBtn.textContent = '⏸';
+    audio.onpause = () => playPauseBtn.textContent = '▶';
+    audio.onended = () => playPauseBtn.textContent = '▶';
+  
+    progressBarContainer.addEventListener('click', (e) => {
+      const clickX = e.offsetX;
+      const width = progressBarContainer.clientWidth;
+      const newTime = (clickX / width) * audio.duration;
+      if (!isNaN(newTime)) {
+        audio.currentTime = newTime;
+      }
+    });
+  
+    volumeSlider.addEventListener('input', () => {
+      audio.volume = volumeSlider.value;
+    });
+  
+    setInterval(() => {
+      if (!audio.paused && !isNaN(audio.duration)) {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = `${progress}%`;
+      }
+    }, 250); // Update every quarter second
+  
+  }, 1000); // The delay should match the CSS transition time
+}
+
+// Custom Modal Functions
+const customModal = document.getElementById('customModal');
+const modalTitle = document.getElementById('modalTitle');
+const modalBody = document.getElementById('modalBody');
+const modalOkBtn = document.getElementById('modalOkBtn');
+const modalCancelBtn = document.getElementById('modalCancelBtn');
+
+function showAlert(message) {
+    modalTitle.textContent = "Notice";
+    modalBody.textContent = message;
+    modalCancelBtn.style.display = 'none';
+    modalOkBtn.onclick = () => { customModal.style.display = 'none'; };
+    customModal.style.display = 'flex';
+}
+
+function showConfirm(message) {
+    return new Promise((resolve) => {
+        modalTitle.textContent = "Confirm";
+        modalBody.textContent = message;
+        modalCancelBtn.style.display = 'inline-block';
+        modalOkBtn.onclick = () => {
+            customModal.style.display = 'none';
+            resolve(true);
+        };
+        modalCancelBtn.onclick = () => {
+            customModal.style.display = 'none';
+            resolve(false);
+        };
+        customModal.style.display = 'flex';
+    });
+}
+
+// DRAGGABLE FUNCTION
+function dragElement(elmnt, handle){
+  let pos1=0,pos2=0,pos3=0,pos4=0;
+  handle.onmousedown=dragMouseDown;
+  function dragMouseDown(e){ e.preventDefault(); pos3=e.clientX; pos4=e.clientY; document.onmouseup=closeDragElement; document.onmousemove=elementDrag; }
+  function elementDrag(e){ e.preventDefault(); pos1=pos3-e.clientX; pos2=pos4-e.clientY; pos3=e.clientX; pos4=e.clientY; elmnt.style.top=(elmnt.offsetTop-pos2)+'px'; elmnt.style.left=(elmnt.offsetLeft-pos1)+'px'; }
+  function closeDragElement(){ document.onmouseup=null; document.onmousemove=null; }
+}
+dragElement(document.getElementById('mainWindow'), document.getElementById('dragBar'));
 </script>
 </body>
 </html>
